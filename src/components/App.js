@@ -8,6 +8,7 @@ import Header from './Header';
 import Form from './Form';
 import PhotoList from './PhotoList';
 import Nav from './Nav';
+import Config from './Config';
 
 
 
