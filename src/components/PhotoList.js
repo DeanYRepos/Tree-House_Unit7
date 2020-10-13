@@ -4,13 +4,25 @@ import NotFound from './NotFound';
 
 class PhotoList extends Component{ 
     render(){
-    
+      const results = this.props.data;
+      let photos = results.map(photo => 
+        <Photo 
+          farm={photo.farm}
+          key={photo.id}
+          server={photo.server}
+          secret={photo.secret}
+          id={photo.id}
+
+        />
+      );
+
       return (
         <div className="photo-container">
-          <h2>Results</h2>
           <ul>
-            <Photo />
-            <NotFound />
+            <h2>Results</h2>
+          
+              {photos}
+              <NotFound />
    
           </ul>
         </div>

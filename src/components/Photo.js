@@ -1,12 +1,20 @@
 import React from 'react';
 
 
-const Photo = () => (
+const Photo = (props) => {
+const url = `https://live.staticflickr.com/${props.server}/${props.id}_${props.secret}.jpg`
+
+  return (
+  
+ 
   <li>
-    <img src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg" alt="" />
+    <img src={url} alt="" />
   </li>
 
-);
+  
+
+  );
+}
 
 export default Photo; 
 
