@@ -6,9 +6,9 @@ const Nav = () => (
 
     <nav className="main-nav">
       <ul className="main-nav">
-        <li><NavLink to=' https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a83e7138627859a29804fa403ca52856&tags=cats&format=rest'>Cats</NavLink></li>
-        <li><NavLink to='https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a83e7138627859a29804fa403ca52856&tags=Dogs&format=rest'>Dogs</NavLink></li>
-        <li><NavLink to=' https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a83e7138627859a29804fa403ca52856&tags=computers&format=rest'>Computers</NavLink></li>
+        <li><NavLink to="/cats">Cats</NavLink></li>
+        <li><NavLink to="/dogs">Dogs</NavLink></li>
+        <li><NavLink to="/bears">Bears</NavLink></li>
       </ul>
   </nav>
 
