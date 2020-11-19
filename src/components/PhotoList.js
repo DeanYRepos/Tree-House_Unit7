@@ -11,11 +11,7 @@ class PhotoList extends Component{
           <Photo 
           data= {results[index]}
           key={photo.id}
-          secret={photo.secret}
-            /*farm={photo.farm}
-            server={photo.server}
-            secret={photo.secret}
-            key={photo.id}*/
+          
 
           />
       );
