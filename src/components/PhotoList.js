@@ -11,6 +11,7 @@ class PhotoList extends Component{
           <Photo 
           data= {results[index]}
           key={photo.id}
+         
           
 
           />

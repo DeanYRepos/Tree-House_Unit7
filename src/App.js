@@ -21,35 +21,38 @@ class App extends Component {
       photos: [],
       dogs: [],
       cats: [],
-      bears:[],
+      monkeys:[],
       loading: true
     };
   }
 
   componentDidMount(){
     this.querySearch(); 
+    this.querySearch('cats');
+    this.querySearch('monkeys');
+    
   }
   
-  querySearch = (query = 'dogs') => {
+  querySearch = (query = 'dogs' ) => {
     this.setState({loading: true})
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
     .then(response => {
      
-      if(query === "dogs"){
+      if(query === "dogs") {
         this.setState({
           dogs: response.data.photos.photo,
           loading: false
         })
 
-      }  else if(query === "cats"){
+      }  else if (query === "cats") {
         this.setState({
           cats: response.data.photos.photo,
           loading: false
         })
 
-      }   else if(query === "bears"){
+      }   else if(query === "monkeys"){
         this.setState({
-          bears: response.data.photos.photo,
+          monkeys: response.data.photos.photo,
           loading: false
         })
 
@@ -79,11 +82,14 @@ class App extends Component {
             <Route exact path="/" render={() => <Redirect to="/dogs"/>}/>
             <Route path="/dogs" render={() => <PhotoList data={this.state.dogs}/>} />
             <Route path="/cats" render={() => <PhotoList data={this.state.cats}/>} />
-            <Route path="/bears" render={() => <PhotoList data={this.state.bears}/>} />
-            { /*<PhotoList data={this.state.photos} />*/}
+            <Route path="/monkeys" render={() => <PhotoList data={this.state.monkeys}/>} />
+            <Route path="/:query" render= {() => <PhotoList data={this.state.photos} />}/>
+           
+           
           </Switch>
+          {/* <PhotoList data={this.state.photos} /> */}
         </div>
-      </BrowserRouter>
+      </BrowserRouter>  
     );
 
   }

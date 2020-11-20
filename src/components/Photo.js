@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Photo = (props) => {
-const url = `https://live.staticflickr.com/${props.data.server}/${props.data.id}_${props.data.secret}.jpg`;
+const url = `https://live.staticflickr.com/${props.data.server}/${props.data.farm}/${props.data.id}_${props.data.secret}.jpg`;
 
   return (
     <li>
