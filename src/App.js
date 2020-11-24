@@ -31,6 +31,7 @@ class App extends Component {
     this.querySearch('cats');
     this.querySearch('monkeys');
     
+    
   }
   
   querySearch = (query = 'dogs' ) => {
@@ -56,7 +57,7 @@ class App extends Component {
           loading: false
         })
 
-      }  else {
+      }  else if(query) {
       this.setState({
         photos: response.data.photos.photo,
         loading: false
@@ -83,8 +84,8 @@ class App extends Component {
             <Route path="/dogs" render={() => <PhotoList data={this.state.dogs}/>} />
             <Route path="/cats" render={() => <PhotoList data={this.state.cats}/>} />
             <Route path="/monkeys" render={() => <PhotoList data={this.state.monkeys}/>} />
-            <Route path="/:query" render= {() => <PhotoList data={this.state.photos} />}/>
-           
+            <Route path={"/:query"} render= {() => <PhotoList data={this.state.photos} />}/>
+          
            
           </Switch>
           {/* <PhotoList data={this.state.photos} /> */}
