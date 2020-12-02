@@ -11,6 +11,7 @@ import Form from './components/Form';
 import PhotoList from './components/PhotoList';
 import Nav from './components/Nav';
 import apiKey from './components/config';
+import Error from './components/Error';
 
 
 
@@ -79,16 +80,18 @@ class App extends Component {
           <h1>Dean's React App</h1>
           <Form onSearch={this.querySearch}/>
           <Nav />
+          { (this.state.loading) 
+            ? <p>Loading...</p> :
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/dogs"/>}/>
             <Route path="/dogs" render={() => <PhotoList data={this.state.dogs}/>} />
             <Route path="/cats" render={() => <PhotoList data={this.state.cats}/>} />
             <Route path="/monkeys" render={() => <PhotoList data={this.state.monkeys}/>} />
             <Route path={"/search/:query"} render= {() => <PhotoList data={this.state.photos} />}/>
-          
+            <Route component= { Error } />
            
           </Switch>
-          {/* <PhotoList data={this.state.photos} /> */}
+         }
         </div>
       </BrowserRouter>  
     );
