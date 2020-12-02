@@ -3,7 +3,9 @@ import Photo from './Photo';
 import NotFound from './NotFound';
 
 class PhotoList extends Component{ 
-    render(){
+    
+  
+  render(){
       const results = this.props.data;
       let photos;
         if(results.length > 0) {
