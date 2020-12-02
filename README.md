@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Reaact Gallery App- 
+Made with React.js, Axios and React-Router-Dom
+config.js file will need to be created and populated by a personal API key from flickr.
 ## Available Scripts
 
 In the project directory, you can run:
